@@ -9,7 +9,7 @@ export default function Character() {
   const router = useRouter();
   const { id } = router.query;
 
-  const { data, error } = useSWR(`https://swapi.dev/api/people/${id}`, fetcher);
+  const { data, error } = useSWR(`https://swapi.dev/api/people/${id}`);
 
   if (error) {
     return <div>Error: error.message</div>;
@@ -31,7 +31,6 @@ export default function Character() {
     </Layout>
   );
 }
-
 
 // //  const { data, error, isLoading } = useSWR(
 //   `https://swapi.dev/api/people/${id}`
